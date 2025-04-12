@@ -71,3 +71,42 @@ alt="貓島" width="400" height="250" border="10" /></a>
 ＼二)   |
 
 </details>
+
+<details>
+<summary>
+
+# 作業連結
+
+</summary>
+<img src="cat4.jpg" width="800" Height="800" />
+</details>
+
+<details>
+<summary>
+
+# 程式碼
+
+</summary>
+
+import cv2
+from matplotlib import pyplot as plt
+
+img = cv2.imread('cat3.jpg')
+im2 = img[:,:,::-1]              # Convert image as rgb
+plt.imshow(im2)
+plt.show()
+
+im3 = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)  # 轉成灰階
+im3 = cv2.medianBlur(im3, 7)                 # 模糊化，去除雜訊
+output = cv2.Canny(im3, 36, 36)              # 偵測邊緣
+
+plt.imshow(output)
+plt.show()
+
+</details>
+
+
+
+
+
+
